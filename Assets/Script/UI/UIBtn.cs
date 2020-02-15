@@ -4,19 +4,21 @@ using UniRx;
 using System;
 using UniRx.Triggers;
 using System.Collections;
+using UnityEngine.Serialization;
+
 public class UIBtn : MonoBehaviour
 {
-    public Button m_btn;
-    public Text m_text;
+    public Button btn;
+    public Text btnText;
 
     public void Start()
     {
         this.ObserveEveryValueChanged(_ => UIManager.instance.m_bTouch).Subscribe(_ =>
         {
-            m_btn.interactable = _;
+            btn.interactable = _;
         }).AddTo(this);
 
-        m_btn.OnClickAsObservable().Where(_ => SoundManager.instance.m_bFxSoundOn).Subscribe(_ =>
+        btn.OnClickAsObservable().Where(_ => SoundManager.instance.m_bFxSoundOn).Subscribe(_ =>
         {
             SoundManager.instance.Fx_Play(FXINDEX.FX_BTNCLICK);
         }).AddTo(this);
@@ -24,6 +26,6 @@ public class UIBtn : MonoBehaviour
 
     public void set_Btn(string _text)
     {
-        m_text.text = _text;
+        btnText.text = _text;
     }
 }

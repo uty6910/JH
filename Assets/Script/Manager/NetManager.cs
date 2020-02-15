@@ -39,7 +39,7 @@ public class NetManager : MonoBehaviour
     /// <summary>
     /// subject 콜백
     /// </summary>
-    private IObservable<WWW> connectServer(NetData netData)
+    private void connectServer(NetData netData)
     {
         m_bConnecting.Value = true;
 
@@ -60,14 +60,12 @@ public class NetManager : MonoBehaviour
         stream.Subscribe(_ =>
         {
             m_bConnecting.Value = false;
-            object dic_reciveObject = MiniJSON.Json.Deserialize(_.text);
+            object dic_reciveObject = Json.Deserialize(_.text);
 
             Dictionary<string, object> data = (Dictionary<string, object>)dic_reciveObject;
             netData.subject.OnNext(data);
             netData.subject.OnCompleted();
         }).Dispose();
-
-        return stream;
     }
 }
 
@@ -107,7 +105,7 @@ public class PacketForm
     {
         if (dic_data.Count > 0)
         {
-            jsonData = MiniJSON.Json.Serialize(dic_data);
+            jsonData = Json.Serialize(dic_data);
 #if UNITY_EDITOR
             oriJsonData = jsonData;
 #endif

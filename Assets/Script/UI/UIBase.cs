@@ -23,7 +23,7 @@ public class UIBase : MonoBehaviour
 
     public virtual void refreshValue() { }
 
-    public virtual void BackUI() { }
+    public virtual void BackUI() { Destroy(gameObject);}
 
     public virtual bool Check_BackKeyEvent() { return true; }
 }
