@@ -20,6 +20,11 @@ public class PoolManager : MonoBehaviour
     public UnityEngine.UI.Button m_btn;
     public CubeObj m_pCubePrefab;
     // Start is called before the first frame update
+
+    private PuzzleBaseItemPool _puzzlePool;
+
+    public PuzzleBaseItemPool puzzlePool => _puzzlePool;
+    
     void Start()
     {
         #region Sample
@@ -37,4 +42,11 @@ public class PoolManager : MonoBehaviour
         #endregion
 
     }
+
+    public void CreatePuzzleItemPool(Transform _trans, PuzzleBaseItemObj[] _array)
+    {
+       _puzzlePool = new PuzzleBaseItemPool(_trans, _array);   
+    }
+    
+    
 }

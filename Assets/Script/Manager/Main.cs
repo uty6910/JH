@@ -24,6 +24,7 @@ public class Main : MonoBehaviour
         // 리셋
         m_bRestart.Where(_ => _).Subscribe(_ =>
         {
+            PuzzleManager.instance.CreatePuzzleStage(5,5);
             m_bRestart.Value = false;
         });
     }

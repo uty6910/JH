@@ -363,18 +363,23 @@
           <e p="Extensions" t="Include">
             <e p="IDisposableExtensions.cs" t="Include" />
           </e>
+          <e p="ItemObj" t="Include">
+            <e p="PuzzleBaseItemObj.cs" t="Include" />
+          </e>
           <e p="JsonKey.cs" t="Include" />
           <e p="Manager" t="Include">
             <e p="Main.cs" t="Include" />
             <e p="NetManager.cs" t="Include" />
             <e p="PoolManager.cs" t="Include" />
             <e p="PopUpManager.cs" t="Include" />
+            <e p="PuzzleManager.cs" t="Include" />
             <e p="SoundManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
           </e>
           <e p="MiniJSON.cs" t="Include" />
           <e p="Pool" t="Include">
             <e p="CubePool.cs" t="Include" />
+            <e p="PuzzleBaseItemPool.cs" t="Include" />
           </e>
           <e p="PopUp" t="Include">
             <e p="PopUpBase.cs" t="Include" />

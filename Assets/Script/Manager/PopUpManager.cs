@@ -42,7 +42,7 @@ public class PopUpManager : MonoBehaviour
 
         GameObject popObj = popUpBase.gameObject;
         
-        Anime.Play(DefineClass.Vector3One3, DefineClass.Vector3One, Motion.Uniform(DefineClass.PopUpPunchAnimTime))
+        Anime.Play(DefineClass.Vector3One3, DefineClass.Vector3One, Motion.Uniform(DefineClass.PopUpPunchAnimVel))
             .Subscribe(_ => popObj.transform.localScale = _).AddTo(this);
         
         Observable.Interval(TimeSpan.FromSeconds(DefineClass.PopUpTime)).First().Subscribe(_ =>
